@@ -1,0 +1,7 @@
+*.gz
+*.tgz
+*.zip
+*.sql
+*.pyc
+botany/
+botany-old/
