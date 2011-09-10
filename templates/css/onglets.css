@@ -1,0 +1,49 @@
+body {
+    font: 12px "Lucida Grande", Arial, sans-serif;
+    background: #aaa;
+    color: rgb(50, 50, 50);
+}
+div#onglet-1 {
+    background: lightblue;
+    padding: 5px;
+}
+div#onglet-2 {
+    background: lightgreen;
+    padding: 5px;
+}
+div#onglet-3 {
+    background: yellow;
+    padding: 5px;
+}
+
+.ui-tabs-hide {
+    display: none;
+}
+
+div#tmpTabExample ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 22px;
+    border-bottom: 1px solid darkgreen;
+}
+div#tmpTabExample ul li {
+    float: left;
+    height: 17px;
+    padding: 4px 10px 0 10px;
+    margin-right: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    border-bottom: none;
+    position: relative;
+    background: yellowgreen;
+}
+div#tmpTabExample ul li a {
+    text-decoration: none;
+    color: black;
+}
+div#tmpTabExample ul li.ui-tabs-selected {
+    background: darkgreen;
+}
+div#tmpTabExample ul li.ui-tabs-selected a {
+    color: white;
+}
