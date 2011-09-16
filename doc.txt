@@ -1,1 +1,9 @@
-kslxksqlx;
+http://datameaning.alwaysdata.net/website/
+projet : mysite
+appli : myapp
+
+mysite/urls.py  ==   (r'^website/' , include('mysite.myapp.urls') ),
+
+mysite/myapp/urls.py ==    (r'^$', 'mysite.myapp.views.index'),
+   )
+

@@ -1,5 +1,7 @@
 # Django settings for mysite project.
 
+mediaPrefix='/home/froloe/website/public/site_media'  #   '/home/datameaning/mysite/public/site_media/'
+templateDir="/home/froloe/website/templates"    #  "/home/datameaning/mysite/templates/"
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -9,12 +11,13 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'datameaning_django'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'datameaning'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'internet05'         # Not used with sqlite3.
-DATABASE_HOST = 'mysql.alwaysdata.com'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+##POUR ALWAYSDATA
+##DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+##DATABASE_NAME = 'datameaning_django'             # Or path to database file if using sqlite3.
+##DATABASE_USER = 'datameaning'             # Not used with sqlite3.
+##DATABASE_PASSWORD = 'internet05'         # Not used with sqlite3.
+##DATABASE_HOST = 'mysql.alwaysdata.com'             # Set to empty string for localhost. Not used with sqlite3.
+##DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -35,7 +38,8 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/datameaning/mysite/public/site_media/'
+#MEDIA_ROOT = '/home/datameaning/mysite/public/site_media/'
+MEDIA_ROOT=mediaPrefix
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -64,13 +68,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'website.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/datameaning/mysite/templates/"
+    templateDir
 )
 
 INSTALLED_APPS = (
@@ -78,7 +82,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'mysite.myapp',
-    'mysite.botany',
+    'website.myapp',
     'django.contrib.admin',
 )

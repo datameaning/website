@@ -5,3 +5,5 @@
 *.pyc
 botany/
 botany-old/
+*\~
+*~

@@ -6,5 +6,5 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^$', 'mysite.myapp.views.index'),
+	(r'^$', 'website.myapp.views.index'),
    )
