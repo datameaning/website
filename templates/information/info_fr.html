@@ -1,0 +1,58 @@
+﻿{% include 'header.html' %}
+	<!-- Start of Left Sidebar -->
+	<div id="left_sidebar">
+		{% include 'leftside_courses.html' %}
+		{% include 'leftside.html' %}
+	</div>
+	<!-- End of Left Sidebar -->
+	
+	<!-- Start of Main Content Area -->
+	<div id="main_content">
+		<!-- Start of New Item Description -->
+
+		<div id="new_item">
+
+		{% if info %}
+			{% for Page in info %}
+			<div id="new_item_header">
+			
+			{% if language.lang %}
+				<h1>{{ Page.titleFR }}</h1>
+			{% else %}
+				<h1>{{ Page.titleEN }}</h1>
+			{% endif %}
+			</div>
+
+			{% if picture %}
+				{% for Document in picture %}
+				<div id="new_item_image">
+				<img class="mainimage" src="../../{{ Document.file }}" />
+				</div>
+				{% endfor %}
+			{% endif %}
+
+			<div id="new_item_text">
+			{% if language.lang %}			
+				<p>{{ Page.textFR|linebreaks }}</p>
+				{% else %}
+				<p>{{ Page.textEN|linebreaks }}</p>
+			{% endif %}
+				<p>{{ Page.lastUpdate }}</p>
+			</div>
+			
+			<div class="clearthis">&nbsp;</div>
+			{% endfor %}
+			{% else %}
+				<div id="new_item_header">
+					<h1>Erreur lors du chargement</h1>
+				</div>
+		{% endif %}
+		</div>
+
+		<!-- End of New Item Description -->
+		<div class="h_divider">&nbsp;</div>
+	</div>
+	<!-- End of Main Content Area -->
+	<div class="clearthis">&nbsp;</div>
+
+	{% include 'footer.html' %}

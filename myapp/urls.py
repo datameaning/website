@@ -7,4 +7,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	(r'^$', 'website.myapp.views.index'),
+        (r'^(demos)/$', 'website.myapp.views.info'),	
    )

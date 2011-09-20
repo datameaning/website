@@ -1,0 +1,51 @@
+﻿{% include 'header.html' %}
+	<!-- Start of Left Sidebar -->
+	<div id="left_sidebar">
+		{% include 'leftside.html' %}
+	</div>
+	<!-- End of Left Sidebar -->
+	
+	<!-- Start of Main Content Area -->
+	<div id="main_content">
+		<!-- Start of New Item Description -->
+
+		<div id="new_item">
+
+		{% if info %}
+			{% for Page in info %}
+			<div id="new_item_header">
+			<h1>{{ Page.titleFR }}</h1>
+			</div>
+
+			{% if picture %}
+				{% for Document in picture %}
+				<div id="new_item_image">
+				<img class="mainimage" src="../../{{ Document.file }}" />
+                                <!--  {{ Document.file }}  vaut site_media/upload/contact.jpg   -->
+				</div>
+				{% endfor %}
+			{% else %}
+				<p>Erreur lors du chargement de l'image</p>
+			{% endif %}
+
+			<div id="new_item_text">	
+				<p>{{ Page.textFR|linebreaks }}</p>
+				<p>{{ Page.lastUpdate }}</p>
+			</div>
+			
+			<div class="clearthis">&nbsp;</div>
+			{% endfor %}
+			{% else %}
+				<div id="new_item_header">
+					<h1>Erreur lors du chargement</h1>
+				</div>
+		{% endif %}
+		</div>
+
+		<!-- End of New Item Description -->
+		<div class="h_divider">&nbsp;</div>
+	</div>
+	<!-- End of Main Content Area -->
+	<div class="clearthis">&nbsp;</div>
+
+	{% include 'footer.html' %}

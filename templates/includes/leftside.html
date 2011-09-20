@@ -1,0 +1,27 @@
+﻿		<!-- Start of Newsletter Signup Form -->
+
+		{% if user.is_authenticated %}
+		<div id="newsletter">
+			<h2>Bonjour {{ user.username }} </h2>
+
+			<p>Dernière connexion: {{ user.last_login }}</p>
+			<p><a href="/wsite/accounts/profile/">Voir mon profil</a></p>
+			{% if user.is_staff %}
+				<p><a href="/admin/">Zone Admin</a></p>
+			{% endif %}
+			<p><a href="/wsite/accounts/logout/">Déconnexion</a></p>
+			
+		</div>		
+		{% else %}
+		<div id="newsletter">
+			<h2><a href="/wsite/accounts/login/">Connectez-vous ! </a></h2>
+
+			<p>Vous êtes un ancien ou actuel brightonien ? </p>
+			<p>Créez-vous un compte et connectez-vous ! </p>
+			<p>Vous pourrez ainsi bénéficier des différents services du site: 
+			newsletter, jobs, évènements... </p>
+			
+		</div>
+		{% endif %}
+
+		<!-- End of Newsletter Signup Form -->
