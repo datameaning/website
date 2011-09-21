@@ -1,10 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Datameaning Home Page</title>
-<style type="text/css">
-<!--
+
 
 /* Pretty Stuff
 ================================== */
@@ -17,7 +11,7 @@
 
 body {
   font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
-  background-color:#D4D4D4;
+   background-color:#D4D4D4;
 }
 
 h1 {
@@ -139,82 +133,3 @@ body {
 	float: right;
 }
 
-
-
-
-
-
--->
-</style>
-<script type="text/javascript" src="/site_media/js/jquery-1.4.4.min.js"></script>
-<script  type="text/javascript" src="/site_media/js/ajax.js"></script>
-</head>
-
-<body>
-
-<div class="wrapper">
-<div class="header">
-
-
-</div> 
-
-<div class="content">
-
-<div class="primary">
-
-<div class="primary">
-
-{% if mainColumnSections %}
-
-{% for section in mainColumnSections %}
- 
-<h1>{{ section.titleFR }}</h1>
-
-<p>{{section.textFR|safe}}
-
-{% endfor%}
-
-{% else %}
-
-<h1> EDITO EN COURS DE REDACTION</h1>
-
-{% endif%}
-</div>
-
-<div class="secondary">
-
-<h2>Magna aliquam erat volutpat</h2>
-<p>Magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-</div>
-
-</div>
-
-<div class="secondary">
-<ul class="nav"> 
-<li class="first"><a href="#">Home</a></li> 
-<li><a href="#">About</a></li> 
-<li><a href="#">News</a></li> 
-<li><a href="#">Services</a></li> 
-<li><a href="#">Clients</a></li> 
-<li><a href="#">Case Studies</a></li> 
-</ul>
-
-<div class="promo">
-<p>Promo item goes here</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-
-</div>
-
-
-</div>
-
-</body>
-</html>
