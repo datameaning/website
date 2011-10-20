@@ -53,8 +53,8 @@ h1, h2, p {
 	padding: 20px;
 }
 
-.content .secondary .promo {
-	padding-left: 20px;
+.content .secondary  {
+	//padding-left: 20px;
 }
 
 .footer {
@@ -63,6 +63,7 @@ background-image:url(/site_media/images/django-powered.jpg);
  background-repeat: no-repeat;
   padding: 1px 20px;
   height: 40px;
+  border: red 2px solid;
 }
 
 a {
@@ -70,7 +71,7 @@ text-decoration: none;
 }
 
 
-ul li a {
+div .content .secondary ul.nav li a {
 display: block;
 margin: 5px 0;   /* separer verticalement */
 width: 120px;
@@ -83,11 +84,13 @@ color:green;
 text-align: center;
 }
 
-ul li a:hover,
-ul li a:focus {
+ ul.nav li a:hover,
+ ul.nav li a:focus {
 	color: #E4FFD3;
 	background-color: #6DA203;
 }
+
+div .content .primary .secondary ul li a {}
 
 
 
@@ -125,11 +128,19 @@ body {
 .content .primary .primary {
 	width: 59.7%;
 	float: left;
+        
 }
 
 .content .primary .secondary {
 	width: 34.33%;
 	padding-right: 2.63%;
 	float: right;
+}
+
+
+.promo {
+       color:red;
+       margin-left: 30px ;
+
 }
 

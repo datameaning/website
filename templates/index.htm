@@ -14,8 +14,6 @@
 
 <div class="wrapper">
 <div class="header">
-
-
 </div> 
 
 <div class="content">
@@ -30,7 +28,9 @@
  
 <h1>{{ section.titleFR }}</h1>
 
-<p>{{section.textFR|safe}}
+{{section.textFR|safe}}
+
+<p> {{section.lastUpdate}} </p>
 
 {% endfor%}
 
@@ -41,17 +41,23 @@
 {% endif%}
 </div>
 
-<div class="secondary">
+<div class="secondary">  <!-- start of content/primary/secondary -->
+<h1>Sites</h1>
 
-<h2>Magna aliquam erat volutpat</h2>
-<p>Magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+<ul>
+<li><a href='http://digitalflora.appspot.com/'>http://digitalflora.appspot.com/</a></li>
+<li><a href='http://www.google.com/chrome'>http://www.google.com/chrome</a></li>
+<li><a href='http://sites.google.com/site/datameaning02/'>http://sites.google.com/site/datameaning02/</a></li>
+<li><a href='http://tips-for-new-bloggers.blogspot.com/'>http://tips-for-new-bloggers.blogspot.com/</a></li>
+<li><a href='http://code.google.com/appengine/articles/'>http://code.google.com/appengine/articles/</a></li>
+</ul>
+
+
 </div>
 
-</div>
+</div>  <!-- end of content/primary -->
 
-<div class="secondary">
+<div class="secondary">     <!-- end of content/secondary -->
 <ul class="nav"> 
 <li class="first"><a href="#">Home</a></li> 
 <li><a href="#">About</a></li> 
@@ -62,15 +68,20 @@
 </ul>
 
 <div class="promo">
-<p>Promo item goes here</p>
-</div>
+<p><img src="/site_media/images/xmlbook.jpg"></p>
+
+ <p>In 2005 I published <a href="http://www.amazon.fr/Mod%C3%A9lisation-manipulation-documents-Fran%C3%A7ois-Role/dp/2746209810"><b>this book</b></a>,
+which had no large diffusion beyond University circles (partly due to
+the very high price set by the publisher !) but, I think, can provide
+the reader with a quite original and detailed treatment of logical
+markup languages and the key notions that underlie them.</p>
 
 </div>
 
+</div>
 </div>
 
 <div class="footer">
-
 </div>
 
 
