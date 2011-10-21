@@ -123,12 +123,17 @@ class Job(models.Model):
 		return u"%s - %s" % (self.type, self.title)
 		
 # pages table
+# definition = edito (main column of home page), links, promo, textmining, webprogramming, etc.
+# section : pour textmining = summary, wikipedia, pmi
+# subsection : pour textmining/wikipedia = categories, biblio, etc.
 class Page(models.Model):
 	definition	=	models.CharField(max_length=100)
+        subtopic        =       models.CharField(max_length=100)
+        subsubtopic     =    models.CharField(max_length=100)
 	titleFR		=	models.CharField(max_length=100)
 	textFR		=	models.TextField()
-	titleEN		=	models.CharField(max_length=100)
-	textEN		=	models.TextField()
+	titleEN		=	models.CharField(max_length=100,  null=True, blank=True)
+	textEN		=	models.TextField( null=True, blank=True)
 	lastUpdate 	= 	models.DateTimeField('Updated')
 	
 	def __unicode__(self):

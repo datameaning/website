@@ -1,79 +1,17 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Datameaning Home Page</title>
 
-<title>
-DEST Informatique/BSc (Hons) European Computing
-</title>
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="/site_media/css/datameaning.css" />
 
-<link rel="stylesheet" href="/site_media/css/style.css" type="text/css" media="screen" />
-
+<script type="text/javascript" src="/site_media/js/jquery-1.4.4.min.js"></script>
+<script  type="text/javascript" src="/site_media/js/ajax.js"></script>
 </head>
 
 <body>
 
-<div id="container">
-	<!-- Start of Page Header -->
-	<div id="page_header">
-
-		<div id="page_heading">
-		<h1><span>DEST Informatique/BSC (Hons) European Computing</span></h1>
-		<h2><span>Site des brightoniens</span></h2>
-		</div>
-
-		<div id="page_headerlinks">
-			<ul>
-		{% if user.is_authenticated %}
-			<li><a href="/wsite/accounts/profile/">Profil</a></li>
-			<li><a href="/wsite/accounts/logout/">Déconnexion</a></li>
-		{% else %}
-			<li><a href="/wsite/accounts/register/">S'inscrire</a></li>
-			<li><a href="/wsite/accounts/login/">Connexion</a></li>
-		{% endif %}
-			<li><a href="/wsite/set/1/">FR</a></li>
-			<li class="last"><a href="/wsite/set/0/">EN</a></li>
-
-			</ul>
-		</div>
-
-		<div id="page_headersearch">
-			<h3>Rechercher:</h3>
-
-			<form action="">
-			<div>
-				<input type="text" />
-				<input type="image" src="/site_media/css/images/button_go.gif" class="button" />
-
-				<div class="clearthis">&nbsp;</div>
-			</div>
-			</form>
-
-		</div>
-
-		<div class="clearthis">&nbsp;</div>
-
-	</div>
-
-	<!-- End of Page Header -->
-
-
-	<!-- Start of Page Menu -->
-
-	<div id="page_menu"><!-- Affiché uniquement si utilisateur connecté  -->
-
-		<ul>
-		<li><a href="/wsite/">Accueil</a></li>
-		<li><a href="/wsite/courses/">La formation</a></li>
-		<li><a href="">Evenements</a></li>
-		<li><a href="">Emplois & Carrières</a></li>
-		<li><a href="">Annuaire des anciens</a></li>
-		<li class="last"><a href="/wsite/contact/">Contact</a></li>
-		</ul>
-
-	</div>
-
-	<!-- End of Page Menu -->
+<div class="wrapper">
+<div class="header">
+</div> 

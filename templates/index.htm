@@ -1,20 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Datameaning Home Page</title>
-
-<link rel="stylesheet" type="text/css" media="screen, projection, print" href="/site_media/css/datameaning.css" />
-
-<script type="text/javascript" src="/site_media/js/jquery-1.4.4.min.js"></script>
-<script  type="text/javascript" src="/site_media/js/ajax.js"></script>
-</head>
-
-<body>
-
-<div class="wrapper">
-<div class="header">
-</div> 
+{% include 'header.html' %}
+<!-- dans   website/templates/includes/header.html -->
 
 <div class="content">
 
@@ -57,14 +42,14 @@
 
 </div>  <!-- end of content/primary -->
 
-<div class="secondary">     <!-- end of content/secondary -->
+<div class="secondary">     <!-- start of content/secondary -->
 <ul class="nav"> 
 <li class="first"><a href="#">Home</a></li> 
-<li><a href="#">About</a></li> 
-<li><a href="#">News</a></li> 
-<li><a href="#">Services</a></li> 
-<li><a href="#">Clients</a></li> 
-<li><a href="#">Case Studies</a></li> 
+<li><a href="#">Text Mining</a></li> 
+<li><a href="#">Matrix Algebra</a></li> 
+<li><a href="#">Web Programming</a></li> 
+<li><a href="#">Python and C++</a></li> 
+<li><a href="#">Biblography</a></li> 
 </ul>
 
 <div class="promo">
@@ -81,11 +66,4 @@ markup languages and the key notions that underlie them.</p>
 </div>
 </div>
 
-<div class="footer">
-</div>
-
-
-</div>
-
-</body>
-</html>
+{% include 'footer.html' %}

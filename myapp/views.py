@@ -30,13 +30,11 @@ def index(request) :
                              context_instance=RequestContext(request))
 
 
-def info(request, url):                                #  (r'^(demos)/$', 'website.myapp.views.info'),	url = demo 
-	info = Page.objects.filter(definition=url)
-	picturePage	=	DocumentPage.objects.filter(page=info)
-	picture		=	Document.objects.filter(id=picturePage)
-	return render_to_response('wsite/information/info_fr.html', 
-								{'info': info, 'picture': picture}, 
-								context_instance=RequestContext(request))
+def info(request, topic):                                #  (r'^(demos)/$', 'website.myapp.views.info'),	url = demo 
+	topicPage 	= 	Page.objects.filter(definition=topic)
+        return render_to_response('info.html',                              # website/templates/information/info.html
+                             {"topic" : topicPage},
+                             context_instance=RequestContext(request))
 
 def merci(request) :
     output="<p>Merci !</p>"

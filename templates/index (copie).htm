@@ -3,149 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Datameaning Home Page</title>
-<style type="text/css">
-<!--
 
-/* Pretty Stuff
-================================== */
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="/site_media/css/datameaning.css" />
 
-/* Zero down margin and paddin on all elements */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
-  background-color:#D4D4D4;
-}
-
-h1 {
-  font-size: 2.4em;
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 2.0em;
-  font-weight: normal;
-}
-
-p, li {
-  font-size: 1.4em;
-}
-
-h1, h2, p {
-  margin: 1em 0;
-}
-
-.branding h1 {
-  margin: 0;
-}
-
-.wrapper {
-  background-color: #fff;
-}
-
-.header {
-  height: 50px;
- /* background-color:#b0b0b0; */
-  background-image:url(/site_media/images/mining.jpg);
-  padding: 20px;
-}
-
-.nav {
-  list-style: none;
-  background-color:#eee;
-	padding: 20px;
-}
-
-.content .secondary .promo {
-	padding-left: 20px;
-}
-
-.footer {
-  background-color:#b0b0b0;
-background-image:url(/site_media/images/django-powered.jpg);
- background-repeat: no-repeat;
-  padding: 1px 20px;
-  height: 40px;
-}
-
-a {
-text-decoration: none;
-}
-
-
-ul li a {
-display: block;
-margin: 5px 0;   /* separer verticalement */
-width: 120px;
-border-width: 1px 2px 2px 1px;
-border-color: #cecece #4a4a4a #4a4a4a #cecece;
-border-style: solid;  /* sans cette ligne aucune bordure n'apparaÃ®t */
-background-color: #8A2BE2  /* ou #fc0 */
-text-decoration: none;
-color:green;
-text-align: center;
-}
-
-ul li a:hover,
-ul li a:focus {
-	color: #E4FFD3;
-	background-color: #6DA203;
-}
-
-
-
-
-/* The Core Technique
-================================= */
-
-body {
-  text-align: center; 
-}
-
-.wrapper {
-  width: 76.8%; 
-  margin: 0 auto; 
-  text-align: left;
-	max-width: 125em;
-	min-width: 62em;
-}
-
-.content {
-	overflow: hidden;
-}
-
-.content .primary { 
-  width: 72.82%;
-  float: right;
-}
-
-.content .secondary { 
-  width: 25%;
-  float: left; 
-} 
-
-
-.content .primary .primary {
-	width: 59.7%;
-	float: left;
-}
-
-.content .primary .secondary {
-	width: 34.33%;
-	padding-right: 2.63%;
-	float: right;
-}
-
-
-
-
-
-
--->
-</style>
 <script type="text/javascript" src="/site_media/js/jquery-1.4.4.min.js"></script>
 <script  type="text/javascript" src="/site_media/js/ajax.js"></script>
 </head>
@@ -154,8 +14,6 @@ body {
 
 <div class="wrapper">
 <div class="header">
-
-
 </div> 
 
 <div class="content">
@@ -170,7 +28,9 @@ body {
  
 <h1>{{ section.titleFR }}</h1>
 
-<p>{{section.textFR|safe}}
+{{section.textFR|safe}}
+
+<p> {{section.lastUpdate}} </p>
 
 {% endfor%}
 
@@ -181,40 +41,44 @@ body {
 {% endif%}
 </div>
 
-<div class="secondary">
+<div class="secondary">  <!-- start of content/primary/secondary -->
+<h1>Sites</h1>
 
-<h2>Magna aliquam erat volutpat</h2>
-<p>Magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+<ul>
+<li><a href='http://digitalflora.appspot.com/'>http://digitalflora.appspot.com/</a></li>
+<li><a href='http://www.google.com/chrome'>http://www.google.com/chrome</a></li>
+<li><a href='http://sites.google.com/site/datameaning02/'>http://sites.google.com/site/datameaning02/</a></li>
+<li><a href='http://tips-for-new-bloggers.blogspot.com/'>http://tips-for-new-bloggers.blogspot.com/</a></li>
+<li><a href='http://code.google.com/appengine/articles/'>http://code.google.com/appengine/articles/</a></li>
+</ul>
+
+
 </div>
 
-</div>
+</div>  <!-- end of content/primary -->
 
-<div class="secondary">
+<div class="secondary">     <!-- start of content/secondary -->
 <ul class="nav"> 
 <li class="first"><a href="#">Home</a></li> 
-<li><a href="#">About</a></li> 
-<li><a href="#">News</a></li> 
-<li><a href="#">Services</a></li> 
-<li><a href="#">Clients</a></li> 
-<li><a href="#">Case Studies</a></li> 
+<li><a href="#">Text Mining</a></li> 
+<li><a href="#">Matrix Algebra</a></li> 
+<li><a href="#">Web Programming</a></li> 
+<li><a href="#">Python and C++</a></li> 
+<li><a href="#">Biblography</a></li> 
 </ul>
 
 <div class="promo">
-<p>Promo item goes here</p>
-</div>
+<p><img src="/site_media/images/xmlbook.jpg"></p>
+
+ <p>In 2005 I published <a href="http://www.amazon.fr/Mod%C3%A9lisation-manipulation-documents-Fran%C3%A7ois-Role/dp/2746209810"><b>this book</b></a>,
+which had no large diffusion beyond University circles (partly due to
+the very high price set by the publisher !) but, I think, can provide
+the reader with a quite original and detailed treatment of logical
+markup languages and the key notions that underlie them.</p>
 
 </div>
 
 </div>
-
-<div class="footer">
-
 </div>
 
-
-</div>
-
-</body>
-</html>
+{% include 'footer.html' %}
