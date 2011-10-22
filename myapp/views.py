@@ -30,11 +30,19 @@ def index(request) :
                              context_instance=RequestContext(request))
 
 
-def info(request, topic):                                #  (r'^(demos)/$', 'website.myapp.views.info'),	url = demo 
-	topicPage 	= 	Page.objects.filter(definition=topic)
-        return render_to_response('info.html',                              # website/templates/information/info.html
-                             {"topic" : topicPage},
+
+def info(request, topic, subtopic, subsubtopic):  #  subtopic='defaut' ne marche pas
+    if subtopic is None: subtopic="nil"
+    if subsubtopic is None: subsubtopic="nil"
+    page=Page.objects.filter(definition=topic,  subtopic=subtopic, subsubtopic=subsubtopic) # 1 seule page normalement ; definition=topic
+    documentPages=DocumentPage.objects.filter(page=page)                                     #  des docs lies ?
+    document=Document.objects.filter(id=documentPages)
+    #return HttpResponse(document)
+    
+    return render_to_response('info.html',                              # website/templates/information/info.html
+                             {"page" : page, "document": document},
                              context_instance=RequestContext(request))
+
 
 def merci(request) :
     output="<p>Merci !</p>"

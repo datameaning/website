@@ -39,7 +39,7 @@ class UserSocialNetworks(models.Model):
 
 # documents table
 class Document(models.Model):
-	file		=	models.FileField(upload_to='site_media/upload') # fichier en question. changer par get_path
+	file		=	models.FileField(upload_to='upload') # sauve dans upload/ sous sitemedia
 	type		=	models.CharField(max_length=100)
 	description	=	models.TextField()
 	date		=	models.DateTimeField('Uploaded')# Friday, September 04th 2011 at 10:30AM
@@ -47,7 +47,7 @@ class Document(models.Model):
 	user		=	models.ForeignKey(User) 		# who posted	
 	
 	def __unicode__(self):
-		return u"%s - %s" % (self.type, self.description)
+		return u"%s - %s" % (self.type, self.file)
 
 # events table
 class Event(models.Model):
@@ -128,8 +128,8 @@ class Job(models.Model):
 # subsection : pour textmining/wikipedia = categories, biblio, etc.
 class Page(models.Model):
 	definition	=	models.CharField(max_length=100)
-        subtopic        =       models.CharField(max_length=100)
-        subsubtopic     =    models.CharField(max_length=100)
+        subtopic        =       models.CharField(max_length=100, default='nil')
+        subsubtopic     =       models.CharField(max_length=100, default='nil')
 	titleFR		=	models.CharField(max_length=100)
 	textFR		=	models.TextField()
 	titleEN		=	models.CharField(max_length=100,  null=True, blank=True)
@@ -137,7 +137,7 @@ class Page(models.Model):
 	lastUpdate 	= 	models.DateTimeField('Updated')
 	
 	def __unicode__(self):
-		return u"%s" % (self.definition)
+		return u"%s %s  %s" % (self.definition, self.subtopic, self.subsubtopic)
 	
 # comments table
 class Comment(models.Model):

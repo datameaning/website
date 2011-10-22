@@ -3,6 +3,11 @@
 
 <div class="content">
 
+
+<!-- ***************************************************************** -->
+<!-- ***************************** PRIMARY *************************** -->
+<!-- ***************************************************************** -->
+
 <div class="primary">
 
 <div class="primary">
@@ -26,44 +31,27 @@
 {% endif%}
 </div>
 
-<div class="secondary">  <!-- start of content/primary/secondary -->
-<h1>Sites</h1>
-
-<ul>
-<li><a href='http://digitalflora.appspot.com/'>http://digitalflora.appspot.com/</a></li>
-<li><a href='http://www.google.com/chrome'>http://www.google.com/chrome</a></li>
-<li><a href='http://sites.google.com/site/datameaning02/'>http://sites.google.com/site/datameaning02/</a></li>
-<li><a href='http://tips-for-new-bloggers.blogspot.com/'>http://tips-for-new-bloggers.blogspot.com/</a></li>
-<li><a href='http://code.google.com/appengine/articles/'>http://code.google.com/appengine/articles/</a></li>
-</ul>
-
-
+<div class="secondary">  <!-- start of content/primary/secondary = preferred sites -->
+{% include 'site-links.html' %}
 </div>
 
 </div>  <!-- end of content/primary -->
 
+
+<!-- ***************************************************************** -->
+<!-- ************************   SECONDARY **************************** -->
+<!-- ***************************************************************** -->
+
 <div class="secondary">     <!-- start of content/secondary -->
-<ul class="nav"> 
-<li class="first"><a href="#">Home</a></li> 
-<li><a href="#">Text Mining</a></li> 
-<li><a href="#">Matrix Algebra</a></li> 
-<li><a href="#">Web Programming</a></li> 
-<li><a href="#">Python and C++</a></li> 
-<li><a href="#">Biblography</a></li> 
-</ul>
+{% include 'toc-links.html' %}
 
-<div class="promo">
-<p><img src="/site_media/images/xmlbook.jpg"></p>
-
- <p>In 2005 I published <a href="http://www.amazon.fr/Mod%C3%A9lisation-manipulation-documents-Fran%C3%A7ois-Role/dp/2746209810"><b>this book</b></a>,
-which had no large diffusion beyond University circles (partly due to
-the very high price set by the publisher !) but, I think, can provide
-the reader with a quite original and detailed treatment of logical
-markup languages and the key notions that underlie them.</p>
-
+<div class="promo">   <!-- est juste a la suite, pas juxtapose -->
+{% include 'promo.html' %}
 </div>
 
-</div>
-</div>
+</div>  <!-- end of content/secondary -->
+
+
+</div>   <!-- end of content -->
 
 {% include 'footer.html' %}
