@@ -1,0 +1,87 @@
+{% include 'header.html' %}    <!-- dans   website/templates/includes/header.html -->
+
+
+<div class="content">
+
+<!-- ***************************************************************** -->
+<!-- ***************************** PRIMARY *************************** -->
+<!-- ***************************************************************** -->
+
+<div class="primary">
+
+<div class="primary">
+<p>
+
+{% if page %}
+ 
+<h1>{{ page.titleFR }}</h1>
+
+{{page.textFR|safe}}
+
+
+<p> {{page.lastUpdate}} </p>
+
+
+
+{% for n in listOfPageNumbers %}    <!-- index des pages suivantes -->
+                                    <!-- topic est toijours passe avec une valeur diff. de nil,mais ensuite ca depent -->
+
+{% ifnotequal subtopic "nil" %}
+   {% ifnotequal subsubtopic "nil" %}
+       subtopic et subsubtopic
+   {% else %}
+         <a href='/website/{{topic}}/{{subtopic}}/{{n}}'>{{n}}</a>
+   {% endifnotequal %}
+{% else %}
+     <b>{{n}}</b>
+{% endifnotequal %}
+
+
+
+{% endfor %}
+
+
+
+{% if document %}
+
+
+{% for d in document %}  <!-- src="/site_media/upload/mining.jpg"/> -->
+
+<p><img src="/{{d.file}}" alt="textmining" height="150" width="100" /> 
+
+{% endfor%}
+
+
+{% endif%}
+
+
+
+{% else %}
+
+<h1> PAGE EN COURS DE REDACTION</h1>
+
+{% endif%}
+</div>
+
+
+<div class="secondary">  <!-- start of content/primary/secondary -->
+{% include 'site-links.html' %}
+</div>
+
+</div>  <!-- end of content/primary -->
+
+<!-- ***************************************************************** -->
+<!-- ************************   SECONDARY **************************** -->
+<!-- ***************************************************************** -->
+
+<div class="secondary">     <!-- start of content/secondary -->
+{% include 'toc-links.html' %}  <!-- navigation links on the top left. Could depend on the current topic -->
+<div class="promo">   <!-- est juste a la suite, pas juxtapose -->
+{% include 'promo.html' %}
+</div>
+</div>  <!-- end of content/secondary -->
+
+</div>   <!-- end of content -->
+
+
+{% include 'footer.html' %}

@@ -4,7 +4,7 @@ from django.contrib import admin
 # Editer pour ajouter les photos liees a une page
 class PageAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None, 			{'fields': ['definition', 'subtopic', 'subsubtopic' ,'lastUpdate']}),
+		(None, 		{'fields': ['definition', 'subtopic', 'subsubtopic' ,'pagenumber' ,'lastUpdate']}),
 		('Francais', 	{'fields': ['titleFR', 'textFR']}),
 		('English', 	{'fields': ['titleEN', 'textEN']}),
 	]

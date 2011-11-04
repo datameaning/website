@@ -82,7 +82,7 @@ class Newsletter(models.Model):
 	
 # cv table <=> personnal experiences
 class CV(models.Model):
-	user		=	models.ForeignKey(User)	# Tester si ca marche.. Clé étrangère en clé primaire
+	user		=	models.ForeignKey(User)	# Tester si ca marche.. ClÃ© Ã©trangÃ¨re en clÃ© primaire
 	beginDate	=	models.DateTimeField('Begin')		# 2008-2011	
 	endDate		=	models.DateTimeField('End')
 	place		=	models.CharField(max_length=100)	# IUT Paris Descartes, 143 Avenue de Versailles 75016 Paris
@@ -116,7 +116,7 @@ class Job(models.Model):
 	description		=	models.TextField()
 	agreementType	=	models.CharField(max_length=100, null=True, blank=True)	# stage/cdd/cdi...
 	duration		=	models.CharField(max_length=50, null=True, blank=True)		# 6 month/2 years
-	wages			=	models.FloatField(null=True, blank=True)					# 15€ per hour
+	wages			=	models.FloatField(null=True, blank=True)					# 15â‚¬ per hour
 	user			=	models.ForeignKey(User)
 		
 	def __unicode__(self):
@@ -130,6 +130,7 @@ class Page(models.Model):
 	definition	=	models.CharField(max_length=100)
         subtopic        =       models.CharField(max_length=100, default='nil')
         subsubtopic     =       models.CharField(max_length=100, default='nil')
+        pagenumber      =       models.IntegerField(null=True, blank=True)
 	titleFR		=	models.CharField(max_length=100)
 	textFR		=	models.TextField()
 	titleEN		=	models.CharField(max_length=100,  null=True, blank=True)
@@ -137,7 +138,7 @@ class Page(models.Model):
 	lastUpdate 	= 	models.DateTimeField('Updated')
 	
 	def __unicode__(self):
-		return u"%s %s  %s" % (self.definition, self.subtopic, self.subsubtopic)
+		return u"%s %s  %s %d" % (self.definition, self.subtopic, self.subsubtopic, self.pagenumber)
 	
 # comments table
 class Comment(models.Model):

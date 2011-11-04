@@ -30,19 +30,34 @@ def index(request) :
                              context_instance=RequestContext(request))
 
 
-
-def info(request, topic, subtopic, subsubtopic):  #  subtopic='defaut' ne marche pas
+# Obligatoires : topic et pagenumber
+def info(request, topic, subtopic, subsubtopic,pagenumber ):  #  subtopic='defaut' ne marche pas
     if subtopic is None: subtopic="nil"
     if subsubtopic is None: subsubtopic="nil"
-    page=Page.objects.filter(definition=topic,  subtopic=subtopic, subsubtopic=subsubtopic) # 1 seule page normalement ; definition=topic
-    documentPages=DocumentPage.objects.filter(page=page)                                     #  des docs lies ?
-    document=Document.objects.filter(id=documentPages)
-    #return HttpResponse(document)
+    # Chercher nb de pages sur le topic demande (pour la pagination)
+    pages=Page.objects.filter(definition=topic,  subtopic=subtopic, subsubtopic=subsubtopic) # 1 seule page normalement ; definition=topic
+    #documentPages=DocumentPage.objects.filter(page=page)  #  des docs lies ?
+    nbOfPages=pages.count()
+    listOfPageNumbers=[ x+1 for x in range(nbOfPages)]
+    # Retrouver la page demandee
+    page=Page.objects.filter(definition=topic,  subtopic=subtopic, subsubtopic=subsubtopic,\
+                              pagenumber=pagenumber)  # queryset singleton
     
-    return render_to_response('info.html',                              # website/templates/information/info.html
-                             {"page" : page, "document": document},
-                             context_instance=RequestContext(request))
+##    document=Document.objects.filter(id=documentPages)
+##    page=page.order_by('pagenumber')
+##    #return HttpResponse(document)
+##    
+##    return render_to_response('info.html',                              # website/templates/information/info.html
+##                             {"page" : page, "document": document},
+##                             context_instance=RequestContext(request))
 
+   
+
+    return render_to_response('info.html',                              # website/templates/information/info.html
+                             {"page" : page[0], "pageNumber" : pagenumber , "nbOfPages" : nbOfPages  ,\
+                              "listOfPageNumbers" : listOfPageNumbers,  "topic" : topic, "subtopic" : subtopic, "subsubtopic" : subsubtopic},
+                             context_instance=RequestContext(request))
+    
 
 def merci(request) :
     output="<p>Merci !</p>"
